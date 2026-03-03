@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 348 85% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 200 2% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 348 85% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 348 85% 55%;
+    --radius: 0.625rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 26%;
+    --sidebar-primary: 348 85% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 91%;
+    --sidebar-ring: 348 85% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-foreground font-body antialiased;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    background: linear-gradient(90deg, #EE2C53 0%, #FF6B6B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, #EE2C53 0%, #FF6B6B 100%);
+  }
+
+  .bg-gradient-dark {
+    background: linear-gradient(135deg, #1a0b1a 0%, #2d1b2d 25%, #1a1a2e 50%, #16213e 75%, #0f3460 100%);
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-lg bg-white/80;
+  }
+
+  .card-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .card-3d-inner {
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-style: preserve-3d;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(238, 44, 83, 0.15);
+  }
+
+  .btn-primary {
+    @apply px-8 py-4 font-display font-semibold rounded-full;
+    @apply transition-all duration-300 relative overflow-hidden;
+    background: linear-gradient(135deg, #EE2C53 0%, #FF6B6B 100%);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(238, 44, 83, 0.4);
+  }
+
+  .btn-secondary {
+    @apply px-8 py-4 bg-white text-gray-900 font-display font-semibold rounded-full;
+    @apply transition-all duration-300;
+  }
+
+  .btn-secondary:hover {
+    background: #f3f4f6;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+  }
+
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24;
+  }
+
+  .heading-xl {
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-tight;
+  }
+
+  .heading-lg {
+    @apply text-3xl sm:text-4xl md:text-5xl font-display font-bold leading-tight;
+  }
+
+  .heading-md {
+    @apply text-2xl sm:text-3xl md:text-4xl font-display font-semibold leading-tight;
+  }
+
+  .body-lg {
+    @apply text-base sm:text-lg text-gray-600 leading-relaxed;
+  }
+
+  .body-md {
+    @apply text-sm sm:text-base text-gray-600 leading-relaxed;
+  }
+}
+
+@layer utilities {
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #EE2C53 0%, #FF6B6B 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #C41E3A 0%, #EE2C53 100%);
+}
+
+/* Selection color */
+::selection {
+  background: rgba(238, 44, 83, 0.3);
+  color: white;
+}
