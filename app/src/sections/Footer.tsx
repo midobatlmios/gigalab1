@@ -83,7 +83,7 @@ const Footer = () => {
               className="flex items-center gap-3 group"
             >
               <img
-                src="/images/jigajiga.png"
+                src="/images/logo-fr-ar-white-f.png"
                 alt="Gigalab Logo"
                 className="h-10 w-auto object-contain transform group-hover:scale-110 transition-transform duration-300"
               />

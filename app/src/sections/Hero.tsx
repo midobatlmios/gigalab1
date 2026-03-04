@@ -1,10 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef} from 'react';
 import gsap from 'gsap';
-import { Beaker, Microscope, FlaskConical, Truck, Factory } from 'lucide-react';
+import { Truck, Factory } from 'lucide-react';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -53,19 +52,9 @@ const Hero = () => {
     return () => ctx.revert();
   }, []);
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const { clientX, clientY } = e;
-      const { innerWidth, innerHeight } = window;
-      setMousePosition({
-        x: (clientX / innerWidth - 0.5) * 20,
-        y: (clientY / innerHeight - 0.5) * 20,
-      });
-    };
+  
 
-    window.addEventListener('mousemove', handleMouseMove, { passive: true });
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+  
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -84,68 +73,7 @@ const Hero = () => {
       }}
     >
       {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Gradient Orbs */}
-        <div
-          className="absolute top-20 left-[10%] w-[500px] h-[500px] rounded-full blur-[120px] animate-float"
-          style={{
-            background: 'radial-gradient(circle, rgba(238,44,83,0.25) 0%, transparent 70%)',
-            transform: `translate(${mousePosition.x * 0.5}px, ${mousePosition.y * 0.5}px)`,
-          }}
-        />
-        <div
-          className="absolute bottom-20 right-[10%] w-[400px] h-[400px] rounded-full blur-[100px] animate-float animation-delay-500"
-          style={{
-            background: 'radial-gradient(circle, rgba(255,107,107,0.2) 0%, transparent 70%)',
-            transform: `translate(${mousePosition.x * -0.3}px, ${mousePosition.y * -0.3}px)`,
-          }}
-        />
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[150px]"
-          style={{
-            background: 'radial-gradient(circle, rgba(147,51,234,0.15) 0%, transparent 70%)',
-            transform: `translate(calc(-50% + ${mousePosition.x * 0.2}px), calc(-50% + ${mousePosition.y * 0.2}px))`,
-          }}
-        />
-
-        {/* Subtle Grid Pattern */}
-        <div className="absolute inset-0 opacity-[0.03]">
-          <div
-            className="w-full h-full"
-            style={{
-              backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-                               linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-              backgroundSize: '60px 60px',
-            }}
-          />
-        </div>
-
-        {/* Floating Icons */}
-        <div
-          className="floating-icon absolute top-[20%] left-[8%] text-white/10"
-          style={{
-            transform: `translate(${mousePosition.x * 1.2}px, ${mousePosition.y * 1.2}px)`,
-          }}
-        >
-          <Beaker className="w-16 h-16" />
-        </div>
-        <div
-          className="floating-icon absolute top-[30%] right-[12%] text-white/10 animation-delay-200"
-          style={{
-            transform: `translate(${mousePosition.x * -1}px, ${mousePosition.y * -1}px)`,
-          }}
-        >
-          <Microscope className="w-20 h-20" />
-        </div>
-        <div
-          className="floating-icon absolute bottom-[25%] left-[15%] text-white/10 animation-delay-400"
-          style={{
-            transform: `translate(${mousePosition.x * 0.8}px, ${mousePosition.y * 0.8}px)`,
-          }}
-        >
-          <FlaskConical className="w-14 h-14" />
-        </div>
-      </div>
+      
 
       <div className="relative z-10 w-full section-padding py-32">
         <div className="max-w-5xl mx-auto text-center">

@@ -58,14 +58,22 @@ const Partners = () => {
   }, []);
 
   const partners = [
-    { name: 'Roche', country: 'Suisse' },
-    { name: 'Abbott', country: 'USA' },
-    { name: 'Siemens', country: 'Allemagne' },
-    { name: 'BioMérieux', country: 'France' },
-    { name: 'Sysmex', country: 'Japon' },
-    { name: 'Beckman Coulter', country: 'USA' },
-    { name: 'Thermo Fisher', country: 'USA' },
-    { name: 'Mindray', country: 'Chine' },
+    { name: 'Apacore', country: '' },
+    { name: 'Euro diagnostica', country: '' },
+    { name: 'H&r', country: '' },
+    { name: 'Tokyo boeki machinery ltd', country: '' },
+    { name: 'Dr fooke laboratoire', country: '' },
+    { name: 'Vircell', country: '' },
+    { name: 'Diagon', country: '' },
+    { name: 'Liteon', country: '' },
+    { name: 'Ali Fax', country: '' },
+    { name: 'Snibe diagnostic', country: '' },
+    { name: 'Meridian bioscience inc', country: '' },
+    { name: 'IDS', country: '' },
+    { name: 'JOKOH', country: '' },
+    { name: 'CORMAY', country: '' },
+    { name: 'D-tek', country: '' },
+
   ];
 
   return (
